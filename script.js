@@ -15,11 +15,28 @@ const windSpeed = document.getElementById('wind-speed');
 const windDirection = document.getElementById('wind-direction');
 const currentDate = document.getElementById('current-date');
 const dayOfTheYear = document.getElementById('day-of-the-year');
+const searchFiled = document.getElementById('input')
+const searchButton = document.getElementById('search-button')
 
+let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=zabrze&units=metric&appid=${weatherKey}&lang=pl`
+let inputText = ''
+let searchText = ''
 
-const weatherMethods = {
-    getWeather() { 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=zabrze&units=metric&appid=${weatherKey}&lang=pl`).then(resp => {
+const methods = {
+    getCity() {
+        searchFiled.addEventListener('input', (e) => {
+            inputText = e.target.value
+        })
+        searchButton.addEventListener('click', () => {
+            searchText = inputText
+            weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&units=metric&appid=${weatherKey}&lang=pl`
+            this.getWeather()
+        })
+    },
+
+    getWeather() {
+        this.getCity() 
+        fetch(`${weatherUrl}`).then(resp => {
             return resp.json().then(resp => {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
@@ -75,10 +92,9 @@ const weatherMethods = {
                 document.body.style.backgroundImage = "url(img/fog.jpg)";
                 break;
         }
-    }
+    },
 }
 
+
 moment.locale("pl"); 
-weatherMethods.getWeather()
-
-
+methods.getWeather()
