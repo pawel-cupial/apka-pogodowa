@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pogoda</title>
+        <link rel='stylesheet' href='style.css'>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/d44b71454e.js"></script>
+    </head>
+    <body>
+        <main>
+            <div id='input-container'>
+                <input id='input' type='text' placeholder='Wpisz nazwę miasta...'>
+                <button id='search-button'>Szukaj</button>
+            </div>
+            <div id='city-container' class='main-container'>
+                <div id='city-container__date'>
+                    <h4 id='current-date'></h4>
+                    <h4 id='day-of-the-year'></h4>
+                </div>
+                <div id='city-container__city'>
+                    <h1 id='city'></h1>
+                    <h2 id='description'></h2>
+                </div>
+                <div id='city-container__temp-choice'>
+                    <h4>C</h4>
+                    <h4>F</h4>
+                </div>
+            </div>
+            <div id='temp-container' class='main-container'>
+                <div id='temp-container__icon'>
+                    <p>temp</p>
+                    <img id='img'>
+                </div>
+                <div id='temp-container__temperature'>
+                    <h2 id='temp'></h2>
+                    <h2>&#8451;</h2>
+                </div>
+                <div id='temp-container__temp-max'>
+                    <h3>max</h3>
+                    <h3 id='temp-max'></h3>
+                </div>
+                <div id='temp-container__temp-min'>
+                    <h3>min</h3>
+                    <h3 id='temp-min'></h3>
+                </div>
+            </div>
+            <div id='wind-container' class='main-container'>
+                <div id='wind-container__wind-direction'>
+                    <p>Wiatr</p>
+                    <p id='wind-direction'>pln-wsch</p>
+                </div>
+                <div id='wind-container__wind-strength'>
+                    <p>Siła</p>
+                    <p id='wind-speed'></p>
+                </div>
+            </div>
+            <div id='pressure-humidity-container' class='main-container'>
+                <div id='pressure-humidity-container__pressure'>
+                    <p>Ciśnienie</p>
+                    <p id='pressure'></p>
+                </div>
+                <div id='pressure-humidity-container__humidity'>
+                    <p>Wilgotność</p>
+                    <p id='humidity'></p>
+                </div>
+            </div>
+            <div id='sunrise-sunset-container' class='main-container'>
+                <div id='sunrise-sunset-container__sunrise'>
+                    <p>wschód słońca</p>
+                    <p>7:05</p>
+                </div>
+                <div id='sunrise-sunset-container__sunset'>
+                    <p>zachód słońca</p>
+                    <p>19:05</p>
+                </div>
+                <div id='location-info-container'>
+                    <p>PL</p>
+                    <p>Strefa czasowa</p>
+                    <p>Współrzędne</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Projekt i wykonanie: PC</p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
+        <script src='script.js'></script>
+    </body>
+</html>
