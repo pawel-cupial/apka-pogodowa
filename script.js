@@ -24,9 +24,13 @@ let searchText = ''
 
 const methods = {
     getCity() {
-        searchFiled.addEventListener('input', (e) => {
+        searchFiled.addEventListener('keyup', (e) => {
             inputText = e.target.value
+            if (e.keyCode === 13) {
+                searchButton.click()
+            }
         })
+        
         searchButton.addEventListener('click', () => {
             searchText = inputText
             weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&units=metric&appid=${weatherKey}&lang=pl`
@@ -41,6 +45,8 @@ const methods = {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
                 console.log(resp)
+            }).catch(error => {
+                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta')
             })
         })
     },
