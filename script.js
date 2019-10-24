@@ -39,12 +39,11 @@ const methods = {
     },
 
     getWeather() {
-        this.getCity() 
+        this.getCity()
         fetch(`${weatherUrl}`).then(resp => {
             return resp.json().then(resp => {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
-                console.log(resp)
             }).catch(error => {
                 alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta')
             })
