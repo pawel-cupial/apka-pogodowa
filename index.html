@@ -19,7 +19,6 @@
                 </div>
                 <div id='city-container__city'>
                     <h1 id='city'></h1>
-                    <h2 id='description'></h2>
                 </div>
                 <div id='city-container__temp-choice'>
                     <input type='radio' id='temp-choice1' name='temp-choice' vale='c' checked>
@@ -31,7 +30,7 @@
             <div id="grid-container">
                 <div id='temp-container' class='main-container'>
                     <div id='temp-container__icon'>
-                        <p>temp</p>
+                        <p id='description'></p>
                         <img id='img'>
                     </div>
                     <div id='temp-container__temperature'>
@@ -47,32 +46,32 @@
                         <h3 id='temp-min'></h3>
                     </div>
                 </div>
-                <div id='wind-container' class='main-container'>
-                    <div id='wind-container__wind-direction'>
+                <div id='wind-container' class='main-container main-container-column'>
+                    <div id='wind-container__wind-direction' class='sub-container'>
                         <p>Wiatr</p>
-                        <p id='wind-direction'>pln-wsch</p>
+                        <p id='wind-direction'></p>
                     </div>
-                    <div id='wind-container__wind-strength'>
+                    <div id='wind-container__wind-strength' class='sub-container'>
                         <p>Siła</p>
                         <p id='wind-speed'></p>
                     </div>
                 </div>
-                <div id='pressure-humidity-container' class='main-container'>
-                    <div id='pressure-humidity-container__pressure'>
+                <div id='pressure-humidity-container' class='main-container main-container-column'>
+                    <div id='pressure-humidity-container__pressure' class='sub-container'>
                         <p>Ciśnienie</p>
                         <p id='pressure'></p>
                     </div>
-                    <div id='pressure-humidity-container__humidity'>
+                    <div id='pressure-humidity-container__humidity' class='sub-container'>
                         <p>Wilgotność</p>
                         <p id='humidity'></p>
                     </div>
                 </div>
-                <div id='sunrise-sunset-container' class='main-container'>
-                    <div id='sunrise-sunset-container__sunrise'>
+                <div id='sunrise-sunset-container' class='main-container main-container-column'>
+                    <div id='sunrise-sunset-container__sunrise' class='sub-container'>
                         <p>wschód słońca</p>
                         <p id='sunrise'>7:05</p>
                     </div>
-                    <div id='sunrise-sunset-container__sunset'>
+                    <div id='sunrise-sunset-container__sunset' class='sub-container'>
                         <p>zachód słońca</p>
                         <p id='sunset'>19:05</p>
                     </div>

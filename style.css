@@ -148,6 +148,17 @@ main {
     flex-direction: column;
 }
 
+.main-container-column {
+    flex-direction: column;
+}
+
+.sub-container {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 footer {
     width: 100%;
     background-color: rgb(15,15,15);

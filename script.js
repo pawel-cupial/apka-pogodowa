@@ -1,5 +1,4 @@
 const weatherKey = '07c5500a2d1583111e65d0446309ef8c';
-const input = document.getElementById('input')
 const city = document.getElementById('city');
 const icon = document.getElementById('img');
 const description = document.getElementById('description');
@@ -14,7 +13,7 @@ const windSpeed = document.getElementById('wind-speed');
 const windDirection = document.getElementById('wind-direction');
 const currentDate = document.getElementById('current-date');
 const dayOfTheYear = document.getElementById('day-of-the-year');
-const searchFiled = document.getElementById('input')
+const searchField = document.getElementById('input')
 const searchButton = document.getElementById('search-button')
 
 let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=zabrze&units=metric&appid=${weatherKey}&lang=pl`
@@ -23,7 +22,7 @@ let searchText = ''
 
 const methods = {
     getCity() {
-        searchFiled.addEventListener('keyup', (e) => {
+        searchField.addEventListener('keyup', (e) => {
             inputText = e.target.value
             if (e.keyCode === 13) {
                 searchButton.click()
@@ -34,6 +33,7 @@ const methods = {
             searchText = inputText
             weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&units=metric&appid=${weatherKey}&lang=pl`
             this.getWeather()
+            searchField.value = ''
         })
     },
 
@@ -44,7 +44,7 @@ const methods = {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
             }).catch(error => {
-                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta' + error)
+                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta')
             })
         })
     },
