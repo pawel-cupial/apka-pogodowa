@@ -69,7 +69,7 @@ main {
 }
 
 #temp-container {
-    height: 55vh;
+    height: 53vh;
     display: flex;
     flex-direction: column;
 }
