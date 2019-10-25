@@ -29,10 +29,13 @@ body {
 }
 
 #search-button {
+    font-family: FontAwesome;
+    font-size: 1.2rem;
+    width: 80px;
     border: 1px solid rgb(93, 212, 93);
     border-radius: 0 10px 10px 0;
     background-color: rgb(93, 212, 93);
-    color: rgb(250,250,250)
+    color: rgb(250,250,250);
 }
 
 main {
@@ -42,8 +45,7 @@ main {
 
 .main-container {
     padding: 25px;
-    /*margin: 0 15px 15px;*/
-    background-color: rgba(15,15,15,.7);
+    background-color: rgba(15,15,15,.8);
     color: rgb(235,235,235);
     border-radius: 15px;
     display: flex;
@@ -54,10 +56,32 @@ main {
 #grid-container {
     display: grid;
     grid-template-columns: 1.5fr 2fr;
-    grid-gap: 1em;
-    margin-top: 1em;
+    grid-gap: 1.5em;
+    margin-top: 1.5em;
 }
 
 #temp-container {
     grid-row: 1/4
+}
+
+#location-info-container {
+    margin-top: 1.5em;
+}
+
+#temp-container {
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(15,15,15);
+    color: rgb(245,245,245);
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
 }
