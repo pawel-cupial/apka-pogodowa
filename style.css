@@ -11,7 +11,7 @@ body {
 
 #input-container {
     width: 80%;
-    height: 100px;
+    height: 150px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -19,7 +19,7 @@ body {
 }
 
 #input, #search-button {
-    height: 40px;
+    height: 50px;
     padding: 0 15px;
 }
 
@@ -38,16 +38,26 @@ body {
 main {
     width: 80%;
     margin: 0 auto;
-    display: grid;
 }
 
 .main-container {
     padding: 25px;
-    margin: 0 15px 15px;
+    /*margin: 0 15px 15px;*/
     background-color: rgba(15,15,15,.7);
     color: rgb(235,235,235);
     border-radius: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    grid-gap: 1em;
+    margin-top: 1em;
+}
+
+#temp-container {
+    grid-row: 1/4
 }

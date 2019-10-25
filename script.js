@@ -45,7 +45,7 @@ const methods = {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
             }).catch(error => {
-                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta')
+                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta' + error)
             })
         })
     },
