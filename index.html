@@ -22,10 +22,10 @@
                     <h2 id='description'></h2>
                 </div>
                 <div id='city-container__temp-choice'>
-                    <input type='radio' id='temp-choice1' name='temp-choice' vale='c'>
-                    <label for='temp-choice1' id='label1'>C</label>
+                    <input type='radio' id='temp-choice1' name='temp-choice' vale='c' checked>
+                    <label for='temp-choice1' id='label1'>C&deg;</label>
                     <input type='radio' id='temp-choice2' name='temp-choice' value='f'>
-                    <label for='temp-choice2' id='label2'>F</label>
+                    <label for='temp-choice2' id='label2'>F&deg;</label>
                 </div>
             </div>
             <div id="grid-container">
@@ -36,7 +36,7 @@
                     </div>
                     <div id='temp-container__temperature'>
                         <h2 id='temp'></h2>
-                        <h2>&#8451;</h2>
+                        <h2 id='degrees'>&#8451;</h2>
                     </div>
                     <div id='temp-container__temp-max'>
                         <h3>max</h3>
@@ -70,11 +70,11 @@
                 <div id='sunrise-sunset-container' class='main-container'>
                     <div id='sunrise-sunset-container__sunrise'>
                         <p>wschód słońca</p>
-                        <p>7:05</p>
+                        <p id='sunrise'>7:05</p>
                     </div>
                     <div id='sunrise-sunset-container__sunset'>
                         <p>zachód słońca</p>
-                        <p>19:05</p>
+                        <p id='sunset'>19:05</p>
                     </div>
                 </div>
                 </div>

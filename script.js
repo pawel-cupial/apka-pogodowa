@@ -3,14 +3,13 @@ const input = document.getElementById('input')
 const city = document.getElementById('city');
 const icon = document.getElementById('img');
 const description = document.getElementById('description');
-//const clouds = document.getElementById('clouds') Dodać czy nie?
 const temp = document.getElementById('temp');
 const tempMax = document.getElementById('temp-max');
 const tempMin = document.getElementById('temp-min');
 const humidity = document.getElementById('humidity');
 const pressure = document.getElementById('pressure');
-const sunset = '?';
-const sunrise = '?';
+const sunset = document.getElementById('sunset');
+const sunrise = document.getElementById('sunrise');
 const windSpeed = document.getElementById('wind-speed');
 const windDirection = document.getElementById('wind-direction');
 const currentDate = document.getElementById('current-date');
@@ -55,16 +54,20 @@ const methods = {
         icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
         description.textContent = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
         temp.textContent = Math.round(data.main.temp);
-        tempMax.textContent = Math.round(data.main.temp_max);
-        tempMin.textContent = Math.round(data.main.temp_min);
+        tempMax.innerHTML =  Math.round(data.main.temp_max) + "\u2103";
+        tempMin.innerHTML = Math.round(data.main.temp_min) + "\u2103";
         humidity.textContent = data.main.humidity + ' %';
-        pressure.textContent = data.main.pressure + ' hPa';
-        sunset.textContent = data.sys.sunset;
-        sunrise.textContent = data.sys.sunrise;
+        pressure.textContent = data.main.pressure + ' hPa'; 
         windSpeed.textContent = data.wind.speed + ' km/h';
         windDirection.textContent = data.wind.deg;
         currentDate.textContent = moment().format('dddd, D MMMM YYYY, h:mm');
         dayOfTheYear.textContent = moment().format('DDD') + ' dzień roku'
+        const sunsetHours = new Date(data.sys.sunset*1000).getHours();
+        const sunsetMinutes = new Date(data.sys.sunset*1000).getMinutes();
+        sunset.textContent = sunsetHours + ':' + sunsetMinutes;
+        const sunriseHours = new Date(data.sys.sunrise*1000).getHours();
+        const sunriseMinutes = new Date(data.sys.sunrise*1000).getMinutes();
+        sunrise.textContent = sunriseHours + ':' + sunriseMinutes;
     },
 
     changeBackground(data) {
