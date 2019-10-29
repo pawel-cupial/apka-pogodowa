@@ -155,7 +155,7 @@ main {
     width: 60%;
     height: 60%;
     position: absolute;
-    left: 11px;
+    left: 12px;
     top: 10px;
     transition: transform 1.5s ease-out;
 }
