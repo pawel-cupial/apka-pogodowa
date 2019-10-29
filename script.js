@@ -16,7 +16,6 @@ const searchField = document.getElementById('input')
 const searchButton = document.getElementById('search-button')
 const arrowIcon = document.getElementById('arrow')
 const country = document.getElementById('location-info-container__country')
-const timezone = document.getElementById('location-info-container__timezone')
 const coords = document.getElementById('location-info-container__coords')
 
 const nameSpace = {
@@ -76,7 +75,6 @@ const methods = {
         sunrise.textContent = sunriseHours + ':' + sunriseMinutes;
         nameSpace.windDirection = data.wind.deg;
         country.textContent = data.sys.country;
-        timezone.textContent = data.timezone;
         coords.textContent = data.coord.lat; //+ data.coord.lon;
         console.log(data)
     },
