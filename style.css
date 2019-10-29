@@ -138,6 +138,28 @@ main {
     justify-content: space-around;
 }
 
+#wind-direction {
+    height:50px;
+    width: 50px;
+    position: relative;
+}
+
+#compass {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(235,235,235);
+    border-radius: 50%;
+}
+
+#arrow {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 11px;
+    top: 10px;
+    transition: transform 1.5s ease-out;
+}
+
 #location-info-container {
     margin-top: 1.5em;
 }

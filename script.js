@@ -10,25 +10,31 @@ const pressure = document.getElementById('pressure');
 const sunset = document.getElementById('sunset');
 const sunrise = document.getElementById('sunrise');
 const windSpeed = document.getElementById('wind-speed');
-const windDirection = document.getElementById('wind-direction');
 const currentDate = document.getElementById('current-date');
 const dayOfTheYear = document.getElementById('day-of-the-year');
 const searchField = document.getElementById('input')
 const searchButton = document.getElementById('search-button')
+const arrowIcon = document.getElementById('arrow')
+const country = document.getElementById('location-info-container__country')
+const timezone = document.getElementById('location-info-container__timezone')
+const coords = document.getElementById('location-info-container__coords')
 
-let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=zabrze&units=metric&appid=${weatherKey}&lang=pl`
-let inputText = ''
-let searchText = ''
+const nameSpace = {
+weatherUrl: `https://api.openweathermap.org/data/2.5/weather?q=zabrze&units=metric&appid=${weatherKey}&lang=pl`,
+inputText: '',
+searchText: '',
+windDirection: ''
+}
 
 const methods = {
     getCity() {
-        searchField.addEventListener('keyup', (e) => {
-            inputText = e.target.value
+        searchField.addEventListener('input', (e) => {
+            nameSpace.inputText = e.target.value
         })
         
         searchButton.addEventListener('click', () => {
-            searchText = inputText
-            weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchText}&units=metric&appid=${weatherKey}&lang=pl`
+            nameSpace.searchText = nameSpace.inputText
+            nameSpace.weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${nameSpace.searchText}&units=metric&appid=${weatherKey}&lang=pl`
             this.getWeather()
             searchField.value = ''
         })
@@ -36,12 +42,12 @@ const methods = {
 
     getWeather() {
         this.getCity()
-        fetch(`${weatherUrl}`).then(resp => {
+        fetch(`${nameSpace.weatherUrl}`).then(resp => {
             return resp.json().then(resp => {
                 this.renderFetchedData(resp)
                 this.changeBackground(resp)
             }).catch(error => {
-                alert('Niestety, Twojego miasta nie ma na liśćie :( Wprowadź nazwę innego miasta')
+                alert('Niestety, Twojej miejscowości nie ma na liśćie :( Wprowadź nazwę innej miejscowości')
             })
         })
     },
@@ -56,15 +62,23 @@ const methods = {
         humidity.textContent = data.main.humidity + ' %';
         pressure.textContent = data.main.pressure + ' hPa'; 
         windSpeed.textContent = data.wind.speed + ' km/h';
-        windDirection.textContent = data.wind.deg;
         currentDate.textContent = moment().format('dddd, D MMMM YYYY, h:mm');
         dayOfTheYear.textContent = moment().format('DDD') + ' dzień roku'
-        const sunsetHours = new Date(data.sys.sunset*1000).getHours();
-        const sunsetMinutes = new Date(data.sys.sunset*1000).getMinutes();
+        let sunsetHours = new Date(data.sys.sunset*1000).getHours();
+        sunsetHours = ("0" + sunsetHours).slice(-2);
+        let sunsetMinutes = new Date(data.sys.sunset*1000).getMinutes();
+        sunsetMinutes = ("0" + sunsetMinutes).slice(-2);
         sunset.textContent = sunsetHours + ':' + sunsetMinutes;
-        const sunriseHours = new Date(data.sys.sunrise*1000).getHours();
-        const sunriseMinutes = new Date(data.sys.sunrise*1000).getMinutes();
+        let sunriseHours = new Date(data.sys.sunrise*1000).getHours();
+        sunriseHours = ("0" + sunriseHours).slice(-2);
+        let sunriseMinutes = new Date(data.sys.sunrise*1000).getMinutes();
+        sunriseMinutes = ("0" + sunriseMinutes).slice(-2);
         sunrise.textContent = sunriseHours + ':' + sunriseMinutes;
+        nameSpace.windDirection = data.wind.deg;
+        country.textContent = data.sys.country;
+        timezone.textContent = data.timezone;
+        coords.textContent = data.coord.lat; //+ data.coord.lon;
+        console.log(data)
     },
 
     changeBackground(data) {
@@ -100,6 +114,17 @@ const methods = {
     },
 }
 
+searchField.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        searchButton.click()
+    }
+})
+
+window.onload = (e) => {
+    setInterval(() => {
+      arrowIcon.style.transform = `rotate(${nameSpace.windDirection}deg)`;
+    }, 500)
+  }
 
 moment.locale("pl"); 
 methods.getWeather()
