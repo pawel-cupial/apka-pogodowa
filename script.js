@@ -24,9 +24,6 @@ const methods = {
     getCity() {
         searchField.addEventListener('keyup', (e) => {
             inputText = e.target.value
-            if (e.keyCode === 13) {
-                searchButton.click()
-            }
         })
         
         searchButton.addEventListener('click', () => {
