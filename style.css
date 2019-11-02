@@ -8,7 +8,7 @@ body {
     background-size: cover;
     background-image: url(img/karkonosze.jpg);
     font-family: 'Merriweather', serif;
-
+    height: 100vh;
 }
 
 #input-container {
