@@ -105,6 +105,7 @@ main {
     grid-template-columns: 1fr 2fr;
     grid-gap: 1.5em;
     margin-top: 1.5em;
+    height: 53vh;
 }
 
 #temp-container {
@@ -118,7 +119,7 @@ main {
 }
 
 #temp {
-    font-size: 8rem;
+    font-size: 6rem;
 }
 
 #degrees {
@@ -201,6 +202,10 @@ footer {
         height: auto;
     }
 
+    main {
+        width: 80%;
+    }
+
     footer {
         position: relative;
         margin-top: 1.5rem;
@@ -208,6 +213,7 @@ footer {
 
     #grid-container {
         grid-template-columns: 1fr;
+        height: auto;
     }
 
     .sub-container {
@@ -227,6 +233,10 @@ footer {
 }
 
 @media (max-width: 1000px) {
+    main {
+        width: 90%;
+    }
+
     #city-container {
         flex-direction: column;
         text-align: center;
