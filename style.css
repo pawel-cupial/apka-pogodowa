@@ -208,6 +208,7 @@ footer {
 
     footer {
         margin-top: 1.5rem;
+        position: relative;
     }
 
     #grid-container {
