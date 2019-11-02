@@ -217,9 +217,26 @@ footer {
     .sub-container > p {
         padding: 10px;
     }
+
+    #arrow {
+        width: 35%;
+        height: 35%;
+        top: 17px;
+        left: 17px;
+    }
 }
 
 @media (max-width: 1000px) {
+    #city-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 5px;
+    }
+
+    #city-container > div {
+        padding: 10px;
+    }
+
     .sub-container {
         width: 70%;
     }
