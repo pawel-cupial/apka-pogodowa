@@ -248,8 +248,12 @@ footer {
         left: 26px;
     }
 
-    p, h4 {
+    p, h3, h4 {
         font-size: 2rem;
+    }
+
+    ::placeholder {
+        font-size: 1.6rem;
     }
 }
 
