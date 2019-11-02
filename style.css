@@ -213,6 +213,16 @@ footer {
         position: relative;
     }
 
+    #input {
+        width: 600px;
+        height: 70px;
+    }
+
+    #search-button {
+        height: 70px;
+        width: 100px;
+    }
+
     #grid-container {
         grid-template-columns: 1fr;
         height: auto;
@@ -226,11 +236,20 @@ footer {
         padding: 10px;
     }
 
+    #wind-direction {
+        height:75px;
+        width: 75px;
+    }
+
     #arrow {
         width: 35%;
         height: 35%;
-        top: 17px;
-        left: 17px;
+        top: 25px;
+        left: 26px;
+    }
+
+    p, h4 {
+        font-size: 2rem;
     }
 }
 
@@ -260,10 +279,6 @@ footer {
 
     #location-info-container > p {
         padding: 10px;
-    }
-
-    p, h4 {
-        font-size: 2rem;
     }
 }
 
