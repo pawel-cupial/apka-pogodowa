@@ -75,7 +75,7 @@ const methods = {
         sunrise.textContent = sunriseHours + ':' + sunriseMinutes;
         nameSpace.windDirection = data.wind.deg;
         country.textContent = data.sys.country;
-        coords.textContent = data.coord.lat; //+ data.coord.lon;
+        coords.innerHTML = data.coord.lat + '&deg;' + ', ' + data.coord.lon + '&deg;';
         console.log(data)
     },
 
