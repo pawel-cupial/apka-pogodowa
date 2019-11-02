@@ -167,7 +167,7 @@ main {
 }
 
 #temp-container {
-    height: 53vh;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -193,4 +193,20 @@ footer {
     justify-content: center;
     position: absolute;
     bottom: 0;
+}
+
+/*________________________________MEDIA QUERIES__________________________*/
+@media (max-width: 1200px) {
+    body {
+        height: auto;
+    }
+
+    footer {
+        position: relative;
+        margin-top: 1.5rem;
+    }
+
+    #grid-container {
+        grid-template-columns: 1fr;
+    }
 }
