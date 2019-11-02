@@ -207,7 +207,9 @@ footer {
     }
 
     footer {
+        height: auto;
         margin-top: 1.5rem;
+        padding: 10px;
         position: relative;
     }
 
@@ -261,7 +263,7 @@ footer {
     }
 
     p, h4 {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
 }
 
