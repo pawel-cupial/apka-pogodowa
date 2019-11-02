@@ -209,4 +209,33 @@ footer {
     #grid-container {
         grid-template-columns: 1fr;
     }
+
+    .sub-container {
+        width: 50%;
+    }
+
+    .sub-container > p {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .sub-container {
+        width: 70%;
+    }
+
+    #location-info-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    #location-info-container > p {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sub-container {
+        width: 100%;
+    } 
 }
