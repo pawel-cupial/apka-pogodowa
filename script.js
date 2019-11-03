@@ -138,4 +138,11 @@ metricBtn.addEventListener('change', (e) =>{
         getWeather(nameSpace.searchText, nameSpace.units)
     }
 })
+moment.locale("pl");
 getWeather()
+
+window.onload = (e) => {
+    setInterval(() => {
+      arrowIcon.style.transform = `rotate(${nameSpace.windDirection}deg)`;
+    }, 500)
+  }
