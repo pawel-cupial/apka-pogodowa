@@ -46,7 +46,7 @@ const renderFetchedData = (data) => {
     city.textContent = data.name;
     icon.setAttribute('src', `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
     description.textContent = data.weather[0].description.charAt(0).toUpperCase() + data.weather[0].description.slice(1);
-    temp.textContent = Math.round(data.main.temp);
+    temp.textContent = Math.round(data.main.temp) + `${nameSpace.tempUnits}`;
     tempMax.innerHTML =  Math.round(data.main.temp_max) + `${nameSpace.tempUnits}`;
     tempMin.innerHTML = Math.round(data.main.temp_min) + `${nameSpace.tempUnits}`;
     humidity.textContent = data.main.humidity + ' %';
